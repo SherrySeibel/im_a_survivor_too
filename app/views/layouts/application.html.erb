@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>ImASurvivorToo</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
+  <head>
+    <title>I'm a Survivor Too</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
 <body>
+
+<div>
+  <% if user_signed_in? %>
+    <p>Welcome, <%= current_user.username %>. <%= link_to "Sign out?", destroy_user_session_path, method: :delete %></p>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Sign in", new_user_session_path %>
+  <% end %>
+</div>
 
 <%= yield %>
 
