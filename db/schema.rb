@@ -30,9 +30,12 @@ ActiveRecord::Schema.define(version: 20140805154227) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "confirmation_token"
+<<<<<<< HEAD
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+=======
+>>>>>>> Add sign-in, sign-out, and sign-up
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
   end
