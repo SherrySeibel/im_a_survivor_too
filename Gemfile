@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 gem 'bourbon'
-gem 'bitters'
 gem 'neat'
 gem 'refills'
 gem 'rails', '4.1.1'
