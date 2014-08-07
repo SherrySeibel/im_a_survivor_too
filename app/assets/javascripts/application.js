@@ -18,6 +18,7 @@
 $(document).ready(function() {
   var menu = $('#navigation-menu');
   var menuToggle = $('#js-mobile-menu');
+  var signIn = $('.sign-in');
   var signUp = $('.sign-up');
 
   $(menuToggle).on('click', function(e) {
