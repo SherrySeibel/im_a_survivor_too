@@ -267,7 +267,7 @@ header.navigation {
     }
   }
 
-  a.sign-up {
+  a.sign-in {
     margin-top: 1.2em;
     float: right;
     @include transition (all 0.2s ease-in-out);
@@ -289,8 +289,9 @@ header.navigation {
     }
   }
 
-  a.sign-in {
+  a.sign-up {
     margin-top: 1.2em;
+    margin-right: 1.2em;
     float: right;
     @include transition (all 0.2s ease-in-out);
     display: inline;

@@ -8,24 +8,6 @@
   </head>
 <body>
 
-<div>
-  <% if user_signed_in? %>
-    <p>Welcome, <%= current_user.username %>.
-    <div class="sign-out">
-      <%= link_to "Sign out?", destroy_user_session_path, method: :delete %></p>
-    </div>
-
-  <% else %>
-    <div class="sign-up">
-      <%= link_to "Sign up", new_user_registration_path %>
-    </div>
-
-    <div class="sign-in">
-      <%= link_to "Sign in", new_user_session_path %>
-    </div>
-  <% end %>
-</div>
-
 <%= yield %>
 
 </body>
