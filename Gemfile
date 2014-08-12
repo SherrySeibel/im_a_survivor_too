@@ -13,6 +13,7 @@ gem "sdoc", "~> 0.4.0",          group: :doc
 gem "rails_12factor", group: :production
 gem "devise"
 gem "figaro"
+gem "carrierwave"
 
 group :development do
   gem "pry-rails"
