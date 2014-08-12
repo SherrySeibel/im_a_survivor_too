@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @profile = Profile.all
+    @profile = Profile.new
   end
 end
