@@ -1,2 +1,7 @@
-<%= link_to "Edit Account", edit_user_registration_path %> |
-<%= link_to "My Profile", :profile %>
+<% if user_signed_in? %>
+  <%= link_to "Edit Account", edit_user_registration_path %> |
+<% end %>
+
+<% if user_signed_in? %>
+  <%= link_to "My Profile", :profile %>
+<% end %>
