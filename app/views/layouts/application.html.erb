@@ -17,27 +17,36 @@
     <a href="" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
     <div class="nav">
       <ul id="navigation-menu">
-        <li class="nav-link"><a href="javascript:void(0)">Products</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">About Us</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">Contact</a></li>
-        <li class="nav-link more"><a href="javascript:void(0)">More</a>
+        <li class="nav-link"><%= link_to "Home", root_path %></a></li>
+        <li class="nav-link more"><a href="javascript:void(0)">About Upstage Lung Cancer</a>
           <ul class="submenu">
-            <li><a href="javascript:void(0)">Submenu Item</a></li>
-            <li><a href="javascript:void(0)">Another Item</a></li>
-            <li class="more"><a href="javascript:void(0)">Item with submenu</a>
+            <li><a href="javascript:void(0)">Our Mission</a></li>
+            <li><a href="javascript:void(0)">Hildy's Story</a></li>
+            <li><a href="javascript:void(0)">Events</a></li>
+            <li class="more"><a href="javascript:void(0)">Get Involved</a>
               <ul class="submenu">
-                <li><a href="javascript:void(0)">Sub-submenu Item</a></li>
-                <li><a href="javascript:void(0)">Another Item</a></li>
-              </ul>
-            </li>
-            <li class="more"><a href="javascript:void(0)">Another submenu</a>
-              <ul class="submenu">
-                <li><a href="javascript:void(0)">Sub-submenu</a></li>
-                <li><a href="javascript:void(0)">An Item</a></li>
+                <li><a href="javascript:void(0)">Volunteer</a></li>
+                <li><a href="javascript:void(0)">Donate</a></li>
               </ul>
             </li>
           </ul>
         </li>
+          <li class="nav-link"><a href="javascript:void(0)">Donate</a></li>
+          <% if user_signed_in? %>
+            <li class="nav-link more"><a href="javascript:void(0)"><%= current_user.username %></a>
+              <ul class="submenu">
+                <li><%= link_to "My Profile", :user %></a></li>
+                <li><%= link_to "Share My Story" %></a></li>
+                <li><%= link_to "Edit My Account", edit_user_registration_path %></a></li>
+                <li class="more"><a href="javascript:void(0)">Get Involved</a>
+                  <ul class="submenu">
+                    <li><a href="javascript:void(0)">Volunteer</a></li>
+                    <li><a href="javascript:void(0)">Donate</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          <% end %>
       </ul>
     </div>
     <div class="navigation-tools">

@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   devise_for :users
   resource :user, only: [:show, :update]
 
-  root to: "home#index"
+  root to: "homes#index"
 end
