@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140813015414) do
+ActiveRecord::Schema.define(version: 20140819031934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "stories", force: true do |t|
+    t.string   "photo"
+    t.string   "video"
+    t.integer  "user_id"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "stories", ["user_id"], name: "index_stories_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                                  null: false
@@ -35,8 +46,11 @@ ActiveRecord::Schema.define(version: 20140813015414) do
     t.string   "unconfirmed_email"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.string   "story_photo"
-    t.string   "video"
+    t.string   "name"
+    t.integer  "age"
+    t.string   "cancer_type"
+    t.integer  "diagnosis_date"
+    t.text     "story"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

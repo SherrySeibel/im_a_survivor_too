@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = current_user
 
     if @user.update(user_params)
-      redirect_to user_path
+      redirect_to user_path, notice: "Your information has saved"
     else
       render :show
     end
@@ -18,8 +18,11 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).
       permit(
-        :story_photo,
-        :video,
+        :name,
+        :age,
+        :cancer_type,
+        :diagnosis_date,
+        :story,
     )
   end
 end

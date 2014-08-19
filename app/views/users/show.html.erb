@@ -1,18 +1,29 @@
 <%= form_for @user, html: { multipart: true } do |f| %>
-  <p>
-    <label>Upload a Photo</label>
-    <%= image_tag(@user.story_photo_url, { width: 300 }) if @user.story_photo? %>
-    <%= f.file_field :story_photo %>
-    <%= f.hidden_field :story_photo_cache %>
-  </p>
+  <div>
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
+  </div>
 
-  <p>
-    <video controls>
-      <source src="<%= @user.video_url %>" type="video/mp4">
-    </video>
-    <%= f.label :video, "Video" %>
-    <%= f.file_field :video %>
-    <%= f.hidden_field :video_cache %>
-  </p>
-  <%= f.submit "Upload" %>
+  <div>
+    <%= f.label :age, "Age" %>
+    <%= f.text_field :age %>
+  </div>
+
+  <div>
+    <%= f.label :cancer_type, "Type of Cancer" %>
+    <%= f.text_field :cancer_type %>
+  </div>
+
+  <div>
+    <%= f.label :diagnosis_date, "Year of Diagnosis" %>
+    <%= f.select :diagnosis_date, (1900..2014).to_a.reverse %>
+  </div>
+
+  <div>
+    <%= f.label :story, "My Story" %>
+    <%= f.text_area :story %>
+  </div>
+  <%= f.submit "Save" %>
 <% end %>
+
+<%= link_to "My Story", [:new, :story] %>
