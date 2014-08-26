@@ -24,34 +24,27 @@
     text-align: center;
     color: $hero-color;
 
-    button {
-      @include button(simple, $base-background-color);
-      font-size: $base-font-size;
-      outline: none;
-    }
-
     .hero-copy {
-      text-align: center;
+      text-align: left;
 
       h1 {
-        font-family: 'Dancing Script', cursive;
-        font-size: 1.6em;
+        font-family: "Dancing Script", cursive;
+        font-size: 3em;
         margin-bottom: .5em;
 
         @include media($large-screen) {
-          font-size: 1.8em;
+          font-size: 3em;
         }
       }
 
       p {
-        font-family: 'Dancing Script', cursive;
-        margin: auto;
-        margin-bottom: 3em;
+        font-family: "Dancing Script", cursive;
+        margin-bottom: 1.8em;
         font-weight: 200;
         line-height: 1.4em;
 
         @include media($large-screen) {
-          font-size: 1.1em;
+          font-size: 1.4em;
           max-width: 40%;
         }
       }
