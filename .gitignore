@@ -17,4 +17,4 @@
 
 config/application.yml
 /public/uploads/
-/public/photos/
+/app/assets/images/
