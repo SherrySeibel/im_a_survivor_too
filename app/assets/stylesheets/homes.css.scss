@@ -10,7 +10,7 @@
   background-position: top;
   background-size: cover;
   padding-bottom: 4em;
-
+  height: 500px;
   .hero-logo img {
     height: 3em;
     margin-bottom: 2.5em;
@@ -34,6 +34,7 @@
       text-align: center;
 
       h1 {
+        font-family: 'Dancing Script', cursive;
         font-size: 1.6em;
         margin-bottom: .5em;
 
@@ -43,7 +44,7 @@
       }
 
       p {
-        font-family: $serif;
+        font-family: 'Dancing Script', cursive;
         margin: auto;
         margin-bottom: 3em;
         font-weight: 200;
