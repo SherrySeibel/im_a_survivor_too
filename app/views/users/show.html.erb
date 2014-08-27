@@ -1,30 +1,42 @@
 <table>
   <tr>
-    <th>User Information</th>
-    <th><%= link_to "Edit profile", [:edit, @user] %></th>
+    <th>My Profile</th>
+    <th><%= link_to "Edit profile", [:edit, current_user] %></th>
   </tr>
-  <tr>
-    <td>Name</td>
-    <td><%= @user.name %></td>
-  </tr>
-  <tr>
-  <tr>
-  <tr>
-    <td>Age</td>
-    <td><%= @user.age %></td>
-  </tr>
-    <td>Type of Cancer</td>
-    <td><%= @user.cancer_type %></td>
-  </tr>
-    <td>Year of Diagnosis</td>
-    <td><%= @user.diagnosis_date %></td>
-  </tr>
-  </tr>
-    <td>Story</td>
-    <td><%= @user.story %></td>
-  </tr>
+  <% if current_user.name.present? %>
+    <tr>
+      <td>Name</td>
+      <td><%= current_user.name %></td>
+    </tr>
+  <% end%>
+
+  <% if current_user.age.present? %>
+    <tr>
+      <td>Age</td>
+      <td><%= current_user.age %></td>
+    </tr>
+  <% end %>
+
+  <% if current_user.cancer_type.present? %>
+    <tr>
+      <td>Type of Cancer</td>
+      <td><%= current_user.cancer_type %></td>
+    </tr>
+  <% end %>
+
+  <% if current_user.diagnosis_date.present? %>
+    <tr>
+      <td>Year of Diagnosis</td>
+      <td><%= current_user.diagnosis_date %></td>
+    </tr>
+  <% end %>
 </table>
 
-<% @story.each do |story| %>
+<% if current_user.story.present? %>
+    <p>Story</p>
+    <p><%= current_user.story %></p>
+<% end %>
+
+<% current_user.stories.each do |story| %>
   <%= image_tag(story.photo_url, { width: 300 }) %>
 <% end %>

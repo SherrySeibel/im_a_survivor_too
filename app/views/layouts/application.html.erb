@@ -9,6 +9,7 @@
 <body>
 
 
+<div class="wrapper-for-content-outside-of-footer">
 <header class="navigation">
   <div class="navigation-wrapper">
     <a href="javascript:void(0)" class="logo">
@@ -25,13 +26,13 @@
             <li><a href="javascript:void(0)">Events</a></li>
             <li class="more"><a href="javascript:void(0)">Get Involved</a>
               <ul class="submenu">
-                <li><a href="javascript:void(0)">Volunteer</a></li>
-                <li><a href="javascript:void(0)">Donate</a></li>
+                <li><a href="mailto:sherry.seibel@gmail.com?Subject=I%20want%20to%20volunteer!">Volunteer</a></li>
+                <li><a href="https://www.kintera.org/AutoGen/Simple/Donor.asp?ievent=1036168&en=6pLBKLNnE5LKJVMqG4LHJRMAJgKEIPNxEcLKI0PGJpI1E">Donate</a></li>
               </ul>
             </li>
           </ul>
         </li>
-          <li class="nav-link"><a href="javascript:void(0)">Donate</a></li>
+          <li class="nav-link"><a href="https://www.kintera.org/AutoGen/Simple/Donor.asp?ievent=1036168&en=6pLBKLNnE5LKJVMqG4LHJRMAJgKEIPNxEcLKI0PGJpI1E">Donate</a></li>
           <% if user_signed_in? %>
             <li class="nav-link more"><a href="javascript:void(0)"><%= current_user.username %></a>
               <ul class="submenu">
@@ -40,8 +41,8 @@
                 <li><%= link_to "Edit My Account", edit_user_registration_path %></a></li>
                 <li class="more"><a href="javascript:void(0)">Get Involved</a>
                   <ul class="submenu">
-                    <li><a href="javascript:void(0)">Volunteer</a></li>
-                    <li><a href="javascript:void(0)">Donate</a></li>
+                    <li><a href="mailto:sherry.seibel@gmail.com?Subject=I%20want%20to%20volunteer!">Volunteer</a></li>
+                    <li><a href="https://www.kintera.org/AutoGen/Simple/Donor.asp?ievent=1036168&en=6pLBKLNnE5LKJVMqG4LHJRMAJgKEIPNxEcLKI0PGJpI1E">Donate</a></li>
                   </ul>
                 </li>
               </ul>
@@ -68,27 +69,15 @@
   </div>
 </header>
 
-<% flash.each do |key, message| %>
-  <div class="<%= key %>"><%= message %></div>
-<% end %>
-
-
 <%= yield %>
-
-
-<!--<div class="wrapper-for-content-outside-of-footer">
-   Uncomment this whole section for a sticky footer. The content of the page should be inside of this .wrapper-for-content-outside-of-footer
-  <div class="push"></div>
-</div>-->
 
 <footer class="footer-2">
   <div class="footer-logo">
-    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="">
+    <img src="/assets/logo.png" alt="">
   </div>
     <ul>
       <li><a href="javascript:void(0)">About</a></li>
-      <li><a href="javascript:void(0)">Contact</a></li>
-      <li><a href="javascript:void(0)">Products</a></li>
+      <li><a href="mailto:sherry.seibel@gmail.com?Subject=Contact%20Upstage%20Lung%20Cancer">Contact</a></li>
     </ul>
 
     <div class="footer-secondary-links">
