@@ -1,29 +1,44 @@
-<%= form_for @user, html: { multipart: true } do |f| %>
-  <div>
-    <%= f.label :name, "Name" %>
-    <%= f.text_field :name %>
-  </div>
+<table>
+  <tr>
+    <th>My Profile</th>
+    <th><%= link_to "Edit profile", [:edit, current_user] %></th>
+  </tr>
+  <% if current_user.name.present? %>
+    <tr>
+      <td>Name</td>
+      <td><%= current_user.name %></td>
+    </tr>
+  <% end%>
 
-  <div>
-    <%= f.label :age, "Age" %>
-    <%= f.text_field :age %>
-  </div>
+  <% if current_user.age.present? %>
+    <tr>
+      <td>Age</td>
+      <td><%= current_user.age %></td>
+    </tr>
+  <% end %>
 
-  <div>
-    <%= f.label :cancer_type, "Type of Cancer" %>
-    <%= f.text_field :cancer_type %>
-  </div>
+  <% if current_user.cancer_type.present? %>
+    <tr>
+      <td>Type of Cancer</td>
+      <td><%= current_user.cancer_type %></td>
+    </tr>
+  <% end %>
 
-  <div>
-    <%= f.label :diagnosis_date, "Year of Diagnosis" %>
-    <%= f.select :diagnosis_date, (1900..2014).to_a.reverse %>
-  </div>
+  <% if current_user.diagnosis_date.present? %>
+    <tr>
+      <td>Year of Diagnosis</td>
+      <td><%= current_user.diagnosis_date %></td>
+    </tr>
+  <% end %>
+</table>
 
-  <div>
-    <%= f.label :story, "My Story" %>
-    <%= f.text_area :story %>
-  </div>
-  <%= f.submit "Save" %>
+<% if current_user.story.present? %>
+    <p>Story</p>
+    <p><%= current_user.story %></p>
+<% end %>
+
+<% current_user.stories.each do |story| %>
+  <%= image_tag(story.photo_url, { width: 300 }) %>
 <% end %>
 
 <%= link_to "My Story", [:new, :story] %>

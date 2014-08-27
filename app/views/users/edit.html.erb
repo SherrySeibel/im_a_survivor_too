@@ -1,0 +1,29 @@
+<%= form_for current_user do |f| %>
+  <div>
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :age, "Age" %>
+    <%= f.text_field :age %>
+  </div>
+
+  <div>
+    <%= f.label :cancer_type, "Type of Cancer" %>
+    <%= f.text_field :cancer_type %>
+  </div>
+
+  <div>
+    <%= f.label :diagnosis_date, "Year of Diagnosis" %>
+    <%= f.select :diagnosis_date, (1900..2014).to_a.reverse %>
+  </div>
+
+  <div>
+    <%= f.label :story, "My Story" %>
+    <%= f.text_area :story %>
+  </div>
+  <%= f.submit "Save" %>
+<% end %>
+
+<%= link_to "Add a photo or video", [:new, :story] %>

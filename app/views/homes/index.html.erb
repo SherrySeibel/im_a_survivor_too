@@ -3,8 +3,13 @@
   <div class="hero-inner">
     <div class="hero-copy">
       <h1>I'm a survivor too</h1>
-      <p>Hildy was diagnosed with lung cancer in 2006. After successful treatment, Hildy celebrates throught song.<br>
-      <%= link_to "Learn more about Hildy" %> | <%= link_to "Share your story" %></p>
+      <p>Hildy was diagnosed with lung cancer in 2006. After successful treatment, Hildy celebrates through song.<br>
+      <%= link_to "Learn more about Hildy" %> |
+      <% if user_signed_in? %>
+        <%= link_to "Share your story", :user %></p>
+      <% else %>
+        <%= link_to "Share your story", new_user_registration_path %>
+      <% end %>
     </div>
   </div>
 </div>
