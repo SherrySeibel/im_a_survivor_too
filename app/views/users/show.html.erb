@@ -37,6 +37,12 @@
     <p><%= current_user.story %></p>
 <% end %>
 
-<% current_user.stories.each do |story| %>
-  <%= image_tag(story.photo_url, { width: 300 }) %>
+<% if current_user.stories.present? %>
+  <% current_user.stories.each do |photo| %>
+    <%= image_tag(photo.photo_url, { width: 300 }) %>
+  <% end %>
+
+  <% current_user.stories.each do |video| %>
+    <%= video_tag(video.video_url, { width: 500 }, controls: true) %>
+  <% end %>
 <% end %>

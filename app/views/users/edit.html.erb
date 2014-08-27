@@ -27,3 +27,19 @@
 <% end %>
 
 <%= link_to "Add a photo or video", [:new, :story] %>
+
+<div>
+  <% if current_user.stories.present? %>
+    <% current_user.stories.each do |photo| %>
+      <%= image_tag(photo.photo_url, { width: 300 }) %>
+      <p><%= link_to "Delete Photo?", photo, data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <% end %>
+  <% end %>
+
+  <% if current_user.stories.present? %>
+    <% current_user.stories.each do |video| %>
+      <%= video_tag(video.video_url, { width: 500 }, controls: true) %>
+      <p><%= link_to "Delete Video?", video, data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <% end %>
+  <% end %>
+</div>
