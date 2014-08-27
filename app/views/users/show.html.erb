@@ -1,7 +1,7 @@
 <table>
   <tr>
     <th>My Profile</th>
-    <th><%= link_to "Edit profile", [:edit, current_user] %></th>
+    <th><%= link_to "Edit profile", edit_user_path(current_user) %></th>
   </tr>
   <% if current_user.name.present? %>
     <tr>

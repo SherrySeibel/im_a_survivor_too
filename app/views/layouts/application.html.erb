@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
     <title>I'm a Survivor Too</title>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -12,9 +13,7 @@
 <div class="wrapper-for-content-outside-of-footer">
 <header class="navigation">
   <div class="navigation-wrapper">
-    <a href="javascript:void(0)" class="logo">
-      <img src="/assets/logo.png" alt="">
-    </a>
+    <a href="javascript:void(0)" class="logo"> <%= image_tag("/assets/logo.png") %> </a>
     <a href="" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
     <div class="nav">
       <ul id="navigation-menu">
@@ -27,7 +26,7 @@
             <li class="more"><a href="javascript:void(0)">Get Involved</a>
               <ul class="submenu">
                 <li><a href="mailto:sherry.seibel@gmail.com?Subject=I%20want%20to%20volunteer!">Volunteer</a></li>
-                <li><a href="https://www.kintera.org/AutoGen/Simple/Donor.asp?ievent=1036168&en=6pLBKLNnE5LKJVMqG4LHJRMAJgKEIPNxEcLKI0PGJpI1E">Donate</a></li>
+                <li><%= link_to "Donate", "https://www.kintera.org/AutoGen/Simple/Donor.asp?ievent=1036168&en=6pLBKLNnE5LKJVMqG4LHJRMAJgKEIPNxEcLKI0PGJpI1E" %></li>
               </ul>
             </li>
           </ul>
@@ -42,7 +41,7 @@
                 <li class="more"><a href="javascript:void(0)">Get Involved</a>
                   <ul class="submenu">
                     <li><a href="mailto:sherry.seibel@gmail.com?Subject=I%20want%20to%20volunteer!">Volunteer</a></li>
-                    <li><a href="https://www.kintera.org/AutoGen/Simple/Donor.asp?ievent=1036168&en=6pLBKLNnE5LKJVMqG4LHJRMAJgKEIPNxEcLKI0PGJpI1E">Donate</a></li>
+                    <li><%= link_to "Donate", "https://www.kintera.org/AutoGen/Simple/Donor.asp?ievent=1036168&en=6pLBKLNnE5LKJVMqG4LHJRMAJgKEIPNxEcLKI0PGJpI1E" %></li>
                   </ul>
                 </li>
               </ul>
@@ -73,7 +72,7 @@
 
 <footer class="footer-2">
   <div class="footer-logo">
-    <img src="/assets/logo.png" alt="">
+    <%= image_tag("/assets/logo.png") %>
   </div>
     <ul>
       <li><a href="javascript:void(0)">About</a></li>
