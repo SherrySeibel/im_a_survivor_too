@@ -1,29 +1,30 @@
-<%= form_for @user, html: { multipart: true } do |f| %>
-  <div>
-    <%= f.label :name, "Name" %>
-    <%= f.text_field :name %>
-  </div>
+<table>
+  <tr>
+    <th>User Information</th>
+    <th><%= link_to "Edit profile", [:edit, @user] %></th>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td><%= @user.name %></td>
+  </tr>
+  <tr>
+  <tr>
+  <tr>
+    <td>Age</td>
+    <td><%= @user.age %></td>
+  </tr>
+    <td>Type of Cancer</td>
+    <td><%= @user.cancer_type %></td>
+  </tr>
+    <td>Year of Diagnosis</td>
+    <td><%= @user.diagnosis_date %></td>
+  </tr>
+  </tr>
+    <td>Story</td>
+    <td><%= @user.story %></td>
+  </tr>
+</table>
 
-  <div>
-    <%= f.label :age, "Age" %>
-    <%= f.text_field :age %>
-  </div>
-
-  <div>
-    <%= f.label :cancer_type, "Type of Cancer" %>
-    <%= f.text_field :cancer_type %>
-  </div>
-
-  <div>
-    <%= f.label :diagnosis_date, "Year of Diagnosis" %>
-    <%= f.select :diagnosis_date, (1900..2014).to_a.reverse %>
-  </div>
-
-  <div>
-    <%= f.label :story, "My Story" %>
-    <%= f.text_area :story %>
-  </div>
-  <%= f.submit "Save" %>
+<% @story.each do |story| %>
+  <%= image_tag(story.photo_url, { width: 300 }) %>
 <% end %>
-
-<%= link_to "My Story", [:new, :story] %>

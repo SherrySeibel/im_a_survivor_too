@@ -1,13 +1,18 @@
 class UsersController < ApplicationController
   def show
     @user = current_user
+    @story = @user.stories
+  end
+
+  def edit
+    @user = current_user
   end
 
   def update
     @user = current_user
 
     if @user.update(user_params)
-      redirect_to user_path, notice: "Your information has saved"
+      redirect_to @user, notice: "Your information has saved"
     else
       render :show
     end
