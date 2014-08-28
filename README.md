@@ -31,4 +31,3 @@ Additional development features will be added over time
 ##Future Design Features
 
 * While this is kind of a blanket statement, the user interface will be cleaned
-up.
