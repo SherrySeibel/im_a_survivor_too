@@ -10,14 +10,13 @@
 <body>
 
 
-<div class="wrapper-for-content-outside-of-footer">
 <header class="navigation">
   <div class="navigation-wrapper">
     <a href="javascript:void(0)" class="logo"> <%= image_tag("/assets/logo.png") %> </a>
     <a href="" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
     <div class="nav">
       <ul id="navigation-menu">
-        <li class="nav-link"><%= link_to "Home", root_path %></a></li>
+        <li class="nav-link"><%= link_to "Home", root_path %></li>
         <li class="nav-link more"><a href="javascript:void(0)">About Upstage Lung Cancer</a>
           <ul class="submenu">
             <li><a href="javascript:void(0)">Our Mission</a></li>
@@ -38,7 +37,7 @@
                 <li><%= link_to "My Profile", edit_user_path(:user) %></li>
                 <li><%= link_to "Share My Story" %></li>
                 <li><%= link_to "Edit My Account", edit_user_registration_path %></li>
-                <li class="more"><a href="javascript:void(0)">Get Involved</li>
+                <li class="more"><a href="javascript:void(0)">Get Involved</a>
                   <ul class="submenu">
                     <li><a href="mailto:sherry.seibel@gmail.com?Subject=I%20want%20to%20volunteer!">Volunteer</a></li>
                     <li><%= link_to "Donate", "https://www.kintera.org/AutoGen/Simple/Donor.asp?ievent=1036168&en=6pLBKLNnE5LKJVMqG4LHJRMAJgKEIPNxEcLKI0PGJpI1E" %></li>
@@ -69,35 +68,5 @@
 </header>
 
 <%= yield %>
-
-<footer class="footer-2">
-  <div class="footer-logo">
-    <%= image_tag("/assets/logo.png") %>
-  </div>
-    <ul>
-      <li><a href="javascript:void(0)">About</a></li>
-      <li><a href="mailto:sherry.seibel@gmail.com?Subject=Contact%20Upstage%20Lung%20Cancer">Contact</a></li>
-    </ul>
-
-    <div class="footer-secondary-links">
-      <ul>
-        <li><a href="javascript:void(0)">Terms and Conditions</a></li>
-        <li><a href="javascript:void(0)">Privacy Policy</a></li>
-      </ul>
-
-      <ul class="footer-social">
-        <li><a href="javascript:void(0)">
-          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="">
-          </a></li>
-        <li><a href="javascript:void(0)">
-          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png" alt="">
-        </a></li>
-        <li><a href="javascript:void(0)">
-          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png" alt="">
-        </a></li>
-      </ul>
-    </div>
-</footer>
-
 </body>
 </html>
