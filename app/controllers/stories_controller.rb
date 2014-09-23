@@ -5,13 +5,15 @@ class StoriesController < ApplicationController
 
   def new
     @story = Story.new
+    @photo = params[:type] == "photo"
+    @video = params[:type] == "video"
   end
 
   def create
     story = current_user.stories.new(story_params)
 
     if story.save
-      redirect_to user_path
+      redirect_to user_path(:user)
     else
       render :new
     end

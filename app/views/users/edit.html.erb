@@ -26,7 +26,8 @@
   <%= f.submit "Save" %>
 <% end %>
 
-<%= link_to "Add a photo or video", [:new, :story] %>
+<%= link_to "Add a photo", new_story_path(type: :photo) %> |
+<%= link_to "Add a video", new_story_path(type: :video) %>
 
 <div>
   <% if current_user.stories.present? %>
