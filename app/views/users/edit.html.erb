@@ -27,3 +27,19 @@
 <% end %>
 
 <%= link_to "Add a photo or video", [:new, :story] %>
+
+<div>
+  <% if current_user.stories.present? %>
+    <% current_user.stories.each do |photo| %>
+      <% if photo.photo_url %>
+        <%= image_tag(photo.photo_url, { width: 300 }) %>
+      <% end %>
+    <% end %>
+
+    <% current_user.stories.each do |video| %>
+      <% if video.video_url %>
+        <%= video_tag(video.video_url, { width: 500 }, controls: true) %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
