@@ -17,6 +17,15 @@ class StoriesController < ApplicationController
     end
   end
 
+  def destroy
+    photo = params[:type] == "photo"
+    video = params[:type] == "video"
+    object = Story.find(params[:id])
+    object.destroy
+
+    redirect_to edit_user_path
+  end
+
   private
 
   def story_params
