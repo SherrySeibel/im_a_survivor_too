@@ -1,7 +1,7 @@
 <table>
   <tr>
     <th>My Profile</th>
-    <th><%= link_to "Edit profile", [:edit, current_user] %></th>
+    <th><%= link_to "Edit profile", edit_user_path(current_user) %></th>
   </tr>
   <% if current_user.name.present? %>
     <tr>
@@ -35,10 +35,6 @@
 <% if current_user.story.present? %>
     <p>Story</p>
     <p><%= current_user.story %></p>
-<% end %>
-
-<% current_user.stories.each do |story| %>
-  <%= image_tag(story.photo_url, { width: 300 }) %>
 <% end %>
 
 <% if current_user.stories.present? %>

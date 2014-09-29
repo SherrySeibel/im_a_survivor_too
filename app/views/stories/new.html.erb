@@ -1,20 +1,25 @@
 <%= form_for @story, html: { multiport: true } do |f| %>
-  <div>
-    <label>Upload a Photo</label>
-    <%= image_tag(@story.photo_url, { width: 300 }) if @story.photo? %>
-    <%= f.file_field :photo %>
-    <%= f.hidden_field :photo_cache %>
-  </div>
+  <% if @photo %>
+    <div>
+      <label>Upload a Photo</label>
+      <%= image_tag(@story.photo_url, { width: 300 }) if @story.photo? %>
+      <%= f.file_field :photo %>
+      <%= f.hidden_field :photo_cache %>
+    </div>
+    <%= f.submit "Upload" %>
+  <% end %>
 
-  <div>
-    <% if @story.video? %>
-      <video controls>
-        <source src="<%= @story.video_url %>" type="video/mp4">
-      </video>
-    <% end %>
-    <%= f.label :video, "Video" %>
-    <%= f.file_field :video %>
-    <%= f.hidden_field :video_cache %>
-  </div>
-  <%= f.submit "Upload" %>
+  <% if @video %>
+    <div>
+      <% if @story.video? %>
+        <video controls>
+          <source src="<%= @story.video_url %>" type="video/mp4">
+        </video>
+      <% end %>
+      <%= f.label :video, "Video" %>
+      <%= f.file_field :video %>
+      <%= f.hidden_field :video_cache %>
+    </div>
+    <%= f.submit "Upload" %>
+  <% end %>
 <% end %>
