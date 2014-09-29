@@ -1,0 +1,52 @@
+<%= form_for current_user do |f| %>
+  <div>
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :age, "Age" %>
+    <%= f.text_field :age %>
+  </div>
+
+  <div>
+    <%= f.label :cancer_type, "Type of Cancer" %>
+    <%= f.text_field :cancer_type %>
+  </div>
+
+  <div>
+    <%= f.label :diagnosis_date, "Year of Diagnosis" %>
+    <%= f.select :diagnosis_date, (1900..2014).to_a.reverse %>
+  </div>
+
+  <div>
+    <%= f.label :story, "My Story" %>
+    <%= f.text_area :story %>
+  </div>
+  <%= f.submit "Save" %>
+<% end %>
+
+<%= link_to "Add a photo", new_story_path(type: :photo) %> |
+<%= link_to "Add a video", new_story_path(type: :video) %>
+
+<div>
+  <% if current_user.stories.present? %>
+    <% current_user.stories.each do |photo| %>
+      <%= image_tag(photo.photo_url, { width: 300 }) %>
+      <% if photo.photo_url %>
+        <p><%= link_to "Delete Photo?", photo, data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<div>
+  <% if current_user.stories.present? %>
+      <% current_user.stories.each do |video| %>
+        <%= video_tag(video.video_url, { width: 500 }, controls: true) %>
+        <% if video.video_url %>
+        <p><%= link_to "Delete Video?", video, data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
