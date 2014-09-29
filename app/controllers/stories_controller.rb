@@ -20,8 +20,8 @@ class StoriesController < ApplicationController
   end
 
   def destroy
-    photo
-    video
+    photo = params[:type]
+    video = params[:type]
     object = Story.find(params[:id])
     object.destroy
 
