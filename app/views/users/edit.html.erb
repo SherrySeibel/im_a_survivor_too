@@ -32,20 +32,16 @@
 <div>
   <% if current_user.stories.present? %>
     <% current_user.stories.each do |photo| %>
-      <%= image_tag(photo.photo_url, { width: 300 }) %>
       <% if photo.photo_url %>
+        <%= image_tag(photo.photo_url, { width: 300 }) %>
         <p><%= link_to "Delete Photo?", photo, data: { confirm: "Are you sure?" }, method: :delete %></p>
       <% end %>
     <% end %>
-  <% end %>
-</div>
 
-<div>
-  <% if current_user.stories.present? %>
-      <% current_user.stories.each do |video| %>
+    <% current_user.stories.each do |video| %>
+      <% if video.video_url %>
         <%= video_tag(video.video_url, { width: 500 }, controls: true) %>
-        <% if video.video_url %>
-        <p><%= link_to "Delete Video?", video, data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <p><%= link_to "Delete Video?", video, data: { confirm: "Are you sure?" }, method: :delete %></p>
       <% end %>
     <% end %>
   <% end %>
